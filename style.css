@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fdfcfb;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: white;
+  padding: 70px 20px;
+  text-align: center;
+  animation: fadeIn 1.8s ease-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1.animate-pop {
+  font-size: 3.5em;
+  animation: popUp 1s ease-in-out;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 1.4em;
+  margin-top: 10px;
+  opacity: 0.95;
+}
+
+section {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: auto;
+  animation: fadeInUp 1.2s ease;
+}
+
+h2 {
+  color: #ee0979;
+  border-left: 5px solid #ff6a00;
+  padding-left: 15px;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 30px;
+  color: #444;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-left: 6px solid #ff6a00;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+  border-left-color: #ee0979;
+}
+
+a {
+  color: #ff6a00;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ee0979;
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  background: #2c2c2c;
+  color: white;
+  padding: 30px;
+  margin-top: 60px;
+  font-size: 0.95em;
+  letter-spacing: 0.5px;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popUp {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  h1.animate-pop {
+    font-size: 2.2em;
+  }
+  section {
+    padding: 30px 15px;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+}
