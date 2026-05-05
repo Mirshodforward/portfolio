@@ -83,6 +83,7 @@ const nav = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#education", label: "Education" },
+  { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
@@ -557,6 +558,310 @@ function EducationSection() {
   );
 }
 
+function ExperienceSection() {
+  return (
+    <section
+      id="experience"
+      className="scroll-mt-20 border-t border-blue-100/90 bg-gradient-to-b from-blue-50/40 via-white to-white px-4 py-16 sm:px-6 sm:py-20"
+    >
+      <div className="mx-auto max-w-5xl">
+        <Reveal>
+          <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600">
+            Experience
+          </h2>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <p className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+            Where I build
+          </p>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <motion.div
+            className="relative mt-8 overflow-hidden rounded-3xl border border-blue-100 bg-white p-6 pt-9 shadow-xl shadow-blue-900/10 sm:p-8 sm:pt-11"
+            whileHover={{ y: -4 }}
+            transition={{ type: "spring", stiffness: 360, damping: 28 }}
+          >
+            <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-indigo-600 via-blue-600 to-sky-500" />
+            <div className="relative flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <a
+                  href="https://weblinker.uz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-1.5 text-lg font-bold text-slate-900 transition-colors hover:text-blue-700"
+                >
+                  Weblinker.uz
+                  <ExternalIcon className="h-4 w-4 text-slate-400 transition-colors group-hover:text-blue-600" />
+                </a>
+                <p className="mt-2 font-medium text-slate-600">
+                  Software developer — campaign & web initiatives
+                </p>
+                <p className="mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-slate-600 sm:text-base">
+                  Contributing to campaign-driven products and rollout work
+                  alongside the Weblinker team — shipping features, integrations,
+                  and supporting campaign-related technical delivery.
+                </p>
+              </div>
+              <div className="flex shrink-0 flex-col items-start gap-2 sm:items-end">
+                <span className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-800">
+                  Current role
+                </span>
+                <span className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-800">
+                  15 Dec 2025 — Present
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+type ProjectLinkItem = {
+  href: string;
+  label: string;
+  icon: typeof ExternalIcon;
+};
+
+type ProjectEntry = {
+  title: string;
+  subtitle: string;
+  gradient: string;
+  links: ProjectLinkItem[];
+  bullets: string[];
+};
+
+const projects: ProjectEntry[] = [
+  {
+    title: "Stars Bot",
+    subtitle:
+      "Telegram bot & backend for StarsPaymee — Stars, payments, admin, and Mini App pairing.",
+    gradient: "from-blue-700 via-blue-600 to-indigo-600",
+    links: [
+      {
+        href: "https://t.me/StarsPaymee_bot",
+        label: "@StarsPaymee_bot",
+        icon: TelegramIcon,
+      },
+    ],
+    bullets: [
+      "Payment integration with Humo cards and TON (QR-based flows and comment verification).",
+      "Admin tools for balances, user filtering, and analytics.",
+      "Referral system to grow and retain users.",
+      "Real-time Telegram Mini App integration (HTML / CSS / JavaScript frontend).",
+    ],
+  },
+  {
+    title: "StarsPaymee",
+    subtitle:
+      "Marketing site and Telegram Mini App hub for Stars, Premium, and Gifts — UzCard/HUMO in UZS.",
+    gradient: "from-indigo-700 via-blue-600 to-cyan-600",
+    links: [
+      {
+        href: "https://www.starstg.uz/en",
+        label: "starstg.uz",
+        icon: ExternalIcon,
+      },
+      {
+        href: "https://t.me/StarsPaymee_bot",
+        label: "@StarsPaymee_bot",
+        icon: TelegramIcon,
+      },
+    ],
+    bullets: [
+      "Multilingual storefront story (UZ / RU / EN): Stars, Premium (multi-month), Gifts, and legacy or limited gift flows — all from one Mini App cockpit.",
+      "UX narrative for local checkout: transparent UZS pricing, recipient checks, order history, referrals, and promos inside the Telegram Web App.",
+      "Trust and engineering cues: initData HMAC verification, rate limiting, hardened headers, and order tracking — aligned with an Express / Postgres / React stack.",
+      "Deep service pages, blog, and FAQ that funnel users from the web into Telegram to launch the Mini App and pay with Uzbek cards.",
+    ],
+  },
+  {
+    title: "Nuvita.uz",
+    subtitle:
+      "Online pharmacy — natural, quality products with catalog, content, and omnichannel support.",
+    gradient: "from-emerald-700 via-teal-600 to-cyan-700",
+    links: [
+      {
+        href: "https://nuvita.uz/",
+        label: "nuvita.uz",
+        icon: ExternalIcon,
+      },
+      {
+        href: "https://t.me/nuvitauzbot",
+        label: "@nuvitauzbot",
+        icon: TelegramIcon,
+      },
+    ],
+    bullets: [
+      "End-to-end storefront: home, catalog, blog, contact, and account flows tailored for an online pharmacy.",
+      "Localized customer experience — Uzbek, Russian, and English — with trust and service messaging (delivery, quality, payments).",
+      "Checkout-oriented UX with familiar local payments (Click, Payme, cash) and Telegram touchpoints for fast support and orders.",
+      "Nuvita AI helper for signed-in users, layered on top of the shop experience.",
+    ],
+  },
+  {
+    title: "Getolog",
+    subtitle:
+      "SaaS for paid Telegram channels — collect payments, issue one-time invite links, and automate membership.",
+    gradient: "from-violet-700 via-purple-600 to-fuchsia-600",
+    links: [
+      {
+        href: "https://www.getolog.uz/",
+        label: "getolog.uz",
+        icon: ExternalIcon,
+      },
+    ],
+    bullets: [
+      "Public site and product story for monetizing closed Telegram channels and groups — payments, invite links, and hands-off membership control.",
+      "No-code positioning: connect a bot token, bind a channel, set prices and duration; tiered SaaS plans with stats, multi-admin, and Click / Payme on paid tiers.",
+      "Subscriber lifecycle messaging: one-time invite links, renewal reminders before expiry, and automatic removal when a subscription ends.",
+      "Full funnel content — capabilities, how it works, pricing, and FAQ — built for clarity and sign-ups.",
+    ],
+  },
+  {
+    title: "StarsJoy",
+    subtitle:
+      "Landing for Telegram Stars, Premium, and Gifts — bot-first purchase flow and trust-focused UX.",
+    gradient: "from-amber-500 via-orange-500 to-rose-600",
+    links: [
+      {
+        href: "https://www.starsjoy.uz/",
+        label: "starsjoy.uz",
+        icon: ExternalIcon,
+      },
+      {
+        href: "https://t.me/starsjoybot",
+        label: "@starsjoybot",
+        icon: TelegramIcon,
+      },
+    ],
+    bullets: [
+      "Marketing site for StarsJoy: hero and service blocks for Telegram Stars, Premium, and Gifts with primary conversion into the bot.",
+      "Clear ‘how it works’ steps, guarantees (rapid delivery, late-delivery cashback, refunds), and testimonials for credibility.",
+      "FAQ and commercial content covering payments (Click / card), delivery expectations, Premium durations, and the referral program.",
+      "Business-facing cues and deep links so visitors can explore services, then complete purchase inside Telegram.",
+    ],
+  },
+  {
+    title: "Premium Send",
+    subtitle:
+      "Telegram Premium storefront for Uzbekistan — pay in so'm with local cards, activate via official Premium gifts.",
+    gradient: "from-slate-900 via-blue-800 to-indigo-700",
+    links: [
+      {
+        href: "https://www.premiumsend.uz/",
+        label: "premiumsend.uz",
+        icon: ExternalIcon,
+      },
+      {
+        href: "https://t.me/premiumsendbot",
+        label: "@premiumsendbot",
+        icon: TelegramIcon,
+      },
+    ],
+    bullets: [
+      "Conversion-focused landing: hero, value props, and CTAs for buying Telegram Premium in Uzbekistan soum without foreign cards.",
+      "Pricing and plan matrix (1 / 3 / 6 / 12 months) with per-month framing, ‘most popular’ cues, and repeated purchase entry points.",
+      "Educational content: Premium feature grid, step-by-step purchase flow, long-form SEO sections, and FAQ covering payments and safety.",
+      "Payment story aligned with the product — UzCard / Humo, Click / Payme to card, quick activation and official gift-based fulfillment messaging.",
+    ],
+  },
+  {
+    title: "Weblinker",
+    subtitle:
+      "No-code business site builder for Uzbekistan — templates, copy, and go live in minutes without a dev or designer.",
+    gradient: "from-cyan-600 via-blue-600 to-blue-900",
+    links: [
+      {
+        href: "https://weblinker.uz/",
+        label: "weblinker.uz",
+        icon: ExternalIcon,
+      },
+    ],
+    bullets: [
+      "Marketing homepage for Weblinker: headline funnel around launching a business site quickly; clear primary and secondary CTAs (start, pricing).",
+      "Pricing section with ‘Vizitka’ vs ‘Landing’ tiers, term options, soum pricing, and reassurance — free trial window, no card to start, cancel anytime.",
+      "Feature storytelling for one-screen sites vs multi-section landings (services table, Telegram contact paths, gallery/testimonials on higher tier).",
+      "Mobile-first positioning and lean layout aligned with solo business owners who need a credible web presence fast.",
+    ],
+  },
+];
+
+function ProjectCard({
+  project,
+  reduceMotion,
+}: {
+  project: ProjectEntry;
+  reduceMotion: boolean | null;
+}) {
+  return (
+    <article className="overflow-hidden rounded-3xl border border-blue-100 bg-white shadow-[0_24px_60px_-24px_rgba(30,64,175,0.35)]">
+      <div
+        className={`relative overflow-hidden bg-gradient-to-r px-6 py-7 text-white sm:px-8 sm:py-8 ${project.gradient}`}
+      >
+        <motion.div
+          className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-white/20 blur-3xl"
+          animate={
+            reduceMotion
+              ? undefined
+              : { scale: [1, 1.15, 1], opacity: [0.3, 0.5, 0.3] }
+          }
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <div className="relative flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <h3 className="text-xl font-bold sm:text-2xl">{project.title}</h3>
+            <p className="mt-2 max-w-xl text-sm text-white/90 sm:text-base">
+              {project.subtitle}
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {project.links.map(({ href, label, icon: Icon }) => (
+              <motion.a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/15 px-3.5 py-2 text-sm font-semibold text-white backdrop-blur-sm"
+                whileHover={{
+                  scale: 1.04,
+                  backgroundColor: "rgba(255,255,255,0.28)",
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Icon className="h-4 w-4" />
+                {label}
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="px-6 py-7 sm:px-8 sm:py-8">
+        <ul className="space-y-4 text-slate-700">
+          {project.bullets.map((text, i) => (
+            <motion.li
+              key={text}
+              className="flex gap-3.5"
+              initial={reduceMotion ? false : { opacity: 0, x: -12 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: i * 0.08 + 0.15,
+                duration: 0.45,
+                ease: easeSmooth,
+              }}
+            >
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-600 shadow-[0_0_0_4px_rgba(37,99,235,0.2)]" />
+              <span className="leading-relaxed">{text}</span>
+            </motion.li>
+          ))}
+        </ul>
+      </div>
+    </article>
+  );
+}
+
 function ProjectsSection() {
   const reduceMotion = useReducedMotion();
 
@@ -576,82 +881,13 @@ function ProjectsSection() {
             Selected work
           </p>
         </Reveal>
-        <Reveal delay={0.1}>
-          <article className="mt-10 overflow-hidden rounded-3xl border border-blue-100 bg-white shadow-[0_24px_60px_-24px_rgba(30,64,175,0.35)]">
-            <div className="relative overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 px-6 py-7 text-white sm:px-8 sm:py-8">
-              <motion.div
-                className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-white/20 blur-3xl"
-                animate={
-                  reduceMotion
-                    ? undefined
-                    : { scale: [1, 1.15, 1], opacity: [0.3, 0.5, 0.3] }
-                }
-                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-              />
-              <div className="relative flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
-                <div>
-                  <h3 className="text-xl font-bold sm:text-2xl">Stars Bot</h3>
-                  <p className="mt-2 max-w-xl text-sm text-blue-100 sm:text-base">
-                    Telegram bot for purchasing Stars (Telegram currency).
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    {
-                      href: "https://t.me/StarsPaymee_bot",
-                      label: "@StarsPaymee_bot",
-                      icon: TelegramIcon,
-                    },
-                    {
-                      href: "https://starstg.uz",
-                      label: "starstg.uz",
-                      icon: ExternalIcon,
-                    },
-                  ].map(({ href, label, icon: Icon }) => (
-                    <motion.a
-                      key={href}
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/15 px-3.5 py-2 text-sm font-semibold text-white backdrop-blur-sm"
-                      whileHover={{ scale: 1.04, backgroundColor: "rgba(255,255,255,0.28)" }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <Icon className="h-4 w-4" />
-                      {label}
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="px-6 py-7 sm:px-8 sm:py-8">
-              <ul className="space-y-4 text-slate-700">
-                {[
-                  "Payment integration with Humo cards and TON (QR-based flows and comment verification).",
-                  "Admin tools for balances, user filtering, and analytics.",
-                  "Referral system to grow and retain users.",
-                  "Real-time Telegram Mini App integration (HTML / CSS / JavaScript frontend).",
-                ].map((text, i) => (
-                  <motion.li
-                    key={text}
-                    className="flex gap-3.5"
-                    initial={reduceMotion ? false : { opacity: 0, x: -12 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      delay: i * 0.08 + 0.15,
-                      duration: 0.45,
-                      ease: easeSmooth,
-                    }}
-                  >
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-600 shadow-[0_0_0_4px_rgba(37,99,235,0.2)]" />
-                    <span className="leading-relaxed">{text}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-          </article>
-        </Reveal>
+        <div className="mt-10 flex flex-col gap-10">
+          {projects.map((project, index) => (
+            <Reveal key={project.title} delay={0.08 * index}>
+              <ProjectCard project={project} reduceMotion={reduceMotion} />
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -768,6 +1004,7 @@ export function Portfolio() {
         <AboutSection />
         <SkillsSection />
         <EducationSection />
+        <ExperienceSection />
         <ProjectsSection />
         <ContactSection />
       </main>
